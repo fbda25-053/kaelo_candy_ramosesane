@@ -1,0 +1,486 @@
+
+/* ====================== BULL & BUSH THEME SETTINGS ====================== */
+:root {
+    /* Your Chosen Colors */
+    --primary-red: #9C2C2C;     /* Rich Burgundy */
+    --accent-gold: #D4AF77;     /* Premium Gold */
+    --dark-bg: #1F1F1F;         /* Deep Charcoal */
+    --light-bg: #f8f1e9;        /* Warm Cream Background */
+    --white: #ffffff;
+    --text-dark: #333333;
+    --text-light: #cccccc;
+    
+    /* Spacing */
+    --container-width: 1200px;
+    --section-padding: 80px 20px;
+}
+
+/* Force our colors to override Bootstrap defaults */
+/* 1. Force Buttons to use Bull & Bush Colors, not Bootstrap Blue */
+.btn-primary, .btn-warning, .btn-cta {
+    background-color: var(--accent-gold) !important;
+    color: var(--dark-bg) !important;
+    border: none !important;
+}
+.btn-primary:hover, .btn-warning:hover, .btn-cta:hover {
+    background-color: var(--primary-red) !important;
+    color: white !important;
+}
+
+/* 2. Force Nav Links to use our styling */
+.nav-link {
+    color: white !important;
+}
+.nav-link:hover {
+    color: var(--accent-gold) !important;
+}
+
+/* 3. Ensure our Fonts override Bootstrap Fonts */
+body, h1, h2, h3, h4, h5, h6, .navbar-brand {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif !important;
+}
+
+/* ====================== RESET & TYPOGRAPHY ====================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    background-color: var(--light-bg);
+    color: var(--text-dark);
+    overflow-x: hidden;
+}
+
+a { text-decoration: none; transition: 0.3s; }
+ul { list-style: none; }
+
+/* GLOBAL IMAGE FIX: PREVENTS STRETCHING EVERYWHERE */
+img { 
+    max-width: 100%; 
+    height: auto; 
+    object-fit: cover; 
+    object-position: center;
+    display: block; 
+}
+
+.container {
+    max-width: var(--container-width);
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* ====================== HEADER & NAVIGATION ====================== */
+.main-header {
+    background-color: var(--dark-bg);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+    padding: 15px 0;
+}
+
+.nav-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.brand-logo .logo-text {
+    font-family: 'Georgia', serif; /* Fallback for logo image */
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: var(--accent-gold);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.main-nav ul {
+    display: flex;
+    gap: 30px;
+}
+
+.main-nav a {
+    color: var(--white);
+    font-weight: 500;
+    font-size: 0.95rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.main-nav a:hover, .main-nav a.active {
+    color: var(--accent-gold);
+}
+
+/* Mobile Menu Button (Hidden on Desktop) */
+.mobile-menu-btn {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+}
+.mobile-menu-btn span {
+    width: 25px;
+    height: 3px;
+    background-color: var(--white);
+}
+
+/* ====================== HERO SECTIONS ====================== */
+.hero-section {
+    height: 70vh; /* Tall Hero */
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: var(--white);
+}
+
+/* Specific Hero Backgrounds */
+.home-hero {
+    /* Replace with your image: image/hero-steak.jpg */
+    background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('image/HOMEPAGE.jpg');
+}
+.about-hero {
+    background-image: linear-gradient(rgba(156, 44, 44, 0.8), rgba(31, 31, 31, 0.9)), url('image/ABOUT.jpg');
+}
+.menu-hero {
+    background-image: linear-gradient(rgba(156, 44, 44, 0.8), rgba(31, 31, 31, 0.9)), url('image/MENU.jpg');
+}
+.gallery-hero {
+    background-image: linear-gradient(rgba(156, 44, 44, 0.8), rgba(31, 31, 31, 0.9)), url('image/GALLERY.jpg');
+}
+.contact-hero {
+    background-image: linear-gradient(rgba(156, 44, 44, 0.8), rgba(31, 31, 31, 0.9)), url('image/CONTACT.jpg');
+}
+.feedback-hero {
+    background-image: linear-gradient(rgba(156, 44, 44, 0.8), rgba(31, 31, 31, 0.9)), url('image/FEEDBACK.jpg');
+}
+
+.hero-content h1 {
+    font-size: 3.5rem;
+    margin-bottom: 20px;
+    font-family: 'Georgia', serif;
+}
+.hero-content p {
+    font-size: 1.25rem;
+    margin-bottom: 30px;
+    opacity: 0.9;
+}
+
+/* ====================== BUTTONS ====================== */
+.btn-cta {
+    background-color: var(--accent-gold);
+    color: var(--dark-bg);
+    padding: 12px 30px;
+    border-radius: 5px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    display: inline-block;
+}
+
+.btn-cta:hover {
+    background-color: var(--primary-red);
+    color: var(--white);
+    transform: translateY(-3px);
+}
+
+.btn-cta.secondary {
+    background-color: transparent;
+    border: 2px solid var(--accent-gold);
+    color: var(--accent-gold);
+    margin-left: 15px;
+}
+
+.btn-cta.secondary:hover {
+    background-color: var(--accent-gold);
+    color: var(--dark-bg);
+}
+
+/* ====================== HOME PAGE SPECIFICS ====================== */
+.welcome-section {
+    padding: 80px 20px;
+    text-align: center;
+}
+.intro-box h2 {
+    color: var(--primary-red);
+    font-family: 'Georgia', serif;
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+}
+.intro-box p {
+    max-width: 700px;
+    margin: 0 auto;
+    color: #555;
+}
+
+.highlights-section {
+    padding-bottom: 80px;
+}
+.highlights-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 40px;
+}
+.highlight-card {
+    background: var(--white);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s;
+}
+.highlight-card:hover { transform: translateY(-5px); }
+.highlight-card img { 
+    width: 100%; 
+    height: 250px; 
+    object-fit: cover;
+    object-position: center;
+}
+.highlight-text { padding: 25px; }
+.highlight-text h3 { color: var(--primary-red); margin-bottom: 10px; }
+.link-text { color: var(--primary-red); font-weight: bold; }
+
+/* ====================== ABOUT PAGE ====================== */
+.main-content { padding: 80px 20px; }
+.split-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    align-items: center;
+    margin-bottom: 80px;
+}
+.split-section.reverse .image-content { order: -1; } /* Swap image order */
+
+.text-content h2 {
+    color: var(--accent-gold);
+    font-size: 2.2rem;
+    font-family: 'Georgia', serif;
+    margin-bottom: 20px;
+}
+.text-content p { color: #555; margin-bottom: 15px; }
+.highlight-text {
+    font-style: italic;
+    border-left: 4px solid var(--primary-red);
+    padding-left: 15px;
+    color: var(--primary-red);
+    font-weight: bold;
+    margin-top: 20px;
+}
+.image-content img {
+    border-radius: 8px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+}
+
+/* Info List in About */
+.info-list { margin-top: 20px; }
+.info-item { margin-bottom: 15px; display: flex; align-items: center; gap: 10px; font-weight: bold; }
+.icon-bullet { color: var(--accent-gold); }
+
+/* Features Grid */
+.features-section { text-align: center; }
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+.feature-card {
+    background: var(--white);
+    padding: 30px;
+    border-radius: 8px;
+    border-top: 4px solid var(--primary-red);
+}
+.feature-card h3 { color: var(--dark-bg); margin: 15px 0; }
+
+/* ====================== MENU PAGE ====================== */
+.menu-category { margin-bottom: 60px; }
+.category-header { text-align: center; margin-bottom: 40px; }
+.category-header h2 { font-size: 2rem; color: var(--primary-red); font-family: 'Georgia', serif; }
+.line { width: 60px; height: 3px; background: var(--accent-gold); margin: 10px auto; }
+.category-desc { color: #666; margin-top: 10px; font-style: italic; }
+
+.menu-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+.menu-item {
+    background: var(--white);
+    padding: 20px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    border-left: 3px solid transparent;
+    transition: 0.3s;
+}
+.menu-item:hover {
+    border-left-color: var(--accent-gold);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+/* FIXED: CSS FOR FOOD IMAGES - NO STRETCHING */
+.food-img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 10px;
+    margin-right: 20px;
+    flex-shrink: 0;
+}
+
+.item-details { flex-grow: 1; }
+.item-details h3 { font-size: 1.1rem; color: var(--dark-bg); margin-bottom: 5px; }
+.item-details p { font-size: 0.9rem; color: #777; }
+.item-price { 
+    font-weight: bold; 
+    color: var(--primary-red); 
+    font-size: 1.2rem; 
+    white-space: nowrap;
+}
+.menu-divider { height: 1px; background: #ddd; margin: 40px 0; }
+
+/* ====================== GALLERY PAGE ====================== */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+.gallery-item { position: relative; overflow: hidden; border-radius: 8px; cursor: pointer; }
+
+/* FIXED: GALLERY IMAGES - NO STRETCHING */
+.gallery-img-wrapper { 
+    position: relative; 
+    height: 250px; 
+    overflow: hidden;
+    border-radius: 8px;
+}
+.gallery-img-wrapper img { 
+    width: 100%; 
+    height: 100%; 
+    object-fit: cover; 
+    object-position: center;
+    transition: 0.5s; 
+}
+
+.gallery-overlay {
+    position: absolute;
+    bottom: -100%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(156, 44, 44, 0.85);
+    color: var(--white);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+    transition: 0.4s ease;
+}
+.gallery-item:hover .gallery-overlay { bottom: 0; }
+.gallery-item:hover img { transform: scale(1.1); }
+
+/* ====================== CONTACT & FEEDBACK ====================== */
+.contact-wrapper, .feedback-wrapper { max-width: 1000px; margin: 0 auto; }
+.contact-grid { display: grid; grid-template-columns: 1fr 1.5fr; gap: 50px; }
+.contact-info h2 { color: var(--primary-red); font-family: 'Georgia', serif; margin-bottom: 20px; }
+.contact-intro { margin-bottom: 30px; color: #555; }
+
+.info-item { display: flex; gap: 15px; margin-bottom: 25px; }
+.icon { font-size: 1.5rem; color: var(--accent-gold); }
+.info-item h4 { margin-bottom: 5px; color: var(--dark-bg); }
+.info-item p { color: #666; margin: 0; }
+
+/* Forms */
+.contact-form-container, .feedback-form {
+    background: var(--white);
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+}
+.form-group { margin-bottom: 20px; }
+.form-group label { display: block; margin-bottom: 8px; font-weight: bold; color: var(--dark-bg); }
+.required { color: var(--primary-red); }
+.form-control, input, select, textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-family: inherit;
+}
+.form-control:focus, input:focus, textarea:focus {
+    outline: none;
+    border-color: var(--primary-red);
+}
+.btn-submit, .btn-cta {
+    background-color: var(--accent-gold);
+    color: var(--dark-bg);
+    border: none;
+    padding: 12px 30px;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 5px;
+    width: 100%;
+    font-size: 1rem;
+}
+.btn-submit:hover { background-color: var(--primary-red); color: var(--white); }
+
+/* Feedback Form Specifics */
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+.full-width { grid-column: span 2; }
+
+/* ====================== FOOTER ====================== */
+.site-footer {
+    background-color: var(--dark-bg);
+    color: #aaa;
+    padding: 60px 20px 20px;
+}
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto 40px;
+}
+.footer-logo { color: var(--accent-gold); font-size: 1.5rem; font-weight: bold; font-family: 'Georgia', serif; margin-bottom: 15px; }
+.footer-col h4 { color: var(--white); margin-bottom: 20px; font-family: 'Georgia', serif; }
+.footer-col ul li { margin-bottom: 10px; }
+.footer-col a:hover { color: var(--accent-gold); padding-left: 5px; }
+.copyright { text-align: center; border-top: 1px solid #333; padding-top: 20px; font-size: 0.9rem; }
+.divider { border: 0; border-top: 1px solid rgba(255,255,255,0.1); margin: 40px 0; }
+
+/* ====================== RESPONSIVE MOBILE ====================== */
+@media (max-width: 768px) {
+    .nav-wrapper { flex-direction: column; }
+    .main-nav ul { display: none; flex-direction: column; width: 100%; gap: 15px; margin-top: 20px; }
+    .main-nav ul.active { display: flex; }
+    .mobile-menu-btn { display: flex; position: absolute; right: 20px; top: 25px; }
+    
+    .split-section, .contact-grid, .form-row, .full-width { grid-template-columns: 1fr; }
+    .split-section.reverse .image-content { order: unset; }
+    .hero-content h1 { font-size: 2.2rem; }
+    .highlights-grid { grid-template-columns: 1fr; }
+    
+    /* Make menu images stack nicely on mobile */
+    .menu-item {
+        flex-direction: column; 
+        text-align: center;
+    }
+    .food-img {
+        margin-right: 0;
+        margin-bottom: 10px;
+        width: 100px;
+        height: 100px;
+    }
+}
